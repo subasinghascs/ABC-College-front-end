@@ -10,9 +10,9 @@ function App() {
         <Router>
             {/* <SideBar /> Place the SideBar component inside the Router */}
             <Switch>
+                <Route exact path="/" component={LoginPage} />
                 <Route exact path="/home" component={HomePage} />
                 <Route path="/signup" component={SignUpPage} />
-                <Route path="/" component={LoginPage} /> 
                 <Route path="/addStudent" component={StudentRegistration} /> 
             </Switch>
         </Router>
