@@ -28,4 +28,4 @@ This is a simple student management system web application built using React. It
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/subasinghascs/ABC-College-front-end.git
