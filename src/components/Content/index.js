@@ -1,23 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CCard, CCardImage, CCardBody, CCardTitle, CCardText, CButton } from '@coreui/react'; // import the required components from CoreUI
+import ReactImg from '../images/images.jpeg'; // Adjust the path to your actual image file
 
-const NavigationButtons = () => {
+
+const Content = () => {
   return (
     <div>
-      <span className="content-item">
-        <Link to="/home">Home</Link>
-      </span>
-      <span className="content-item">
-        <Link to="/about">About</Link>
-      </span>
-      <span className="content-item">
-        <Link to="/services">Services</Link>
-      </span>
-      <span className="content-item">
-        <Link to="/contact">Contact</Link>
-      </span>
+         <CCard style={{ width: '18rem' }}>
+          <CCardImage orientation="top" src={ReactImg} />
+          <CCardBody>
+            <CCardTitle>Card title</CCardTitle>
+            <CCardText>
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </CCardText>
+            <CButton color="primary" href="#">Go somewhere</CButton>
+          </CCardBody>
+        </CCard>
+        {/* Add the other three CCard components here */}
     </div>
   );
 };
 
-export default NavigationButtons;
+export default Content;

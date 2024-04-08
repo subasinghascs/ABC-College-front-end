@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import FormHeader from './FormHeader';
-import FormInput from './FormInput';
-import FormButton from './FormButton'; 
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import '../styles/loginStyles.css';
 
-function LoginForm() {
-    const [formData, setFormData] = useState({
-        username: '',
-        password: ''
-    });
 
-    const history = useHistory(); // Access to the history object
+function LoginForm() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,57 +15,44 @@ function LoginForm() {
             const response = await fetch('http://127.0.0.1:5000/api/admin/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({ username, password }),
             });
-            if (response.status === 200) {
-                const data = await response.json();
-                localStorage.setItem('access_token', data.access_token);
-                // Redirect to home page
-                history.push('/home');
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem('access_token', data.access_token); // Store token in localStorage
+                history.push('/home'); // Redirect to home page after successful login
             } else {
-                // Display error alert
-                alert('Failed to log in. Please check your username and password.');
+                setError(data.message);
             }
         } catch (error) {
             console.error('Error:', error);
-            // Display error alert
-            alert('An error occurred. Please try again later.');
+            setError('An error occurred, please try again.');
         }
-    };
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     return (
         <div id="loginform">
-            <FormHeader title="Login" />
+            <h2 id="headerTitle">Login</h2>
+            <div className="error-container">
+                {error && <p className="error">{error}</p>}
+            </div>
             <form onSubmit={handleSubmit}>
-                <FormInput
-                    description="Username"
-                    placeholder="Enter your username"
-                    type="text"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleChange}
-                />
-                <FormInput
-                    description="Password"
-                    placeholder="Enter your password"
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
-                <FormButton title="Log in" />
+                <div className="row">
+                    <label>Username:</label>
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter your username" />
+                </div>
+                <div className="row">
+                    <label>Password:</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" />
+                </div>
+                <div id="button" className="row">
+                    <button type="submit">Login</button>
+                </div>
             </form>
             <div id="alternativeLogin">
-                <label>Don't have an account?</label>
-                <div >
-                    <Link to="/signup">Sign up</Link>
-                </div>
+                <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
             </div>
         </div>
     );

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/loginStyles.css';
 
-function StudentRegistration() {
+function UpdateStudent() {
     const [formData, setFormData] = useState({
+        student_id: '',
         name: '',
         email: '',
         street: '',
@@ -23,7 +24,7 @@ function StudentRegistration() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { name, email, street, city, state, zipcode } = formData;
+            const { student_id, name, email, street, city, state, zipcode } = formData;
             const studentData = {
                 name,
                 email,
@@ -37,8 +38,8 @@ function StudentRegistration() {
                 ]
             };
 
-            const response = await fetch('http://127.0.0.1:5000/api/student/student', {
-                method: 'POST',
+            const response = await fetch(`http://127.0.0.1:5000/api/student/student/${student_id}`, {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -47,10 +48,10 @@ function StudentRegistration() {
             const data = await response.json();
             if (response.ok) {
                 setError('');
-                setSuccessMessage('Student registration successful!');
+                setSuccessMessage('Student updated successfully!');
                 setTimeout(() => {
                     setSuccessMessage('');
-                    history.push('/home'); // Redirect to home page after successful student creation
+                    history.push('/home'); // Redirect to home page after successful student update
                 }, 3000); // Clear success message and redirect after 3 seconds
             } else {
                 setError(data.message);
@@ -63,14 +64,17 @@ function StudentRegistration() {
 
     return (
         <div id="studentRegistrationForm">
-            <h2 id="headerTitle">Student Registration</h2>
+            <h2 id="headerTitle">Update Student Details</h2>
             <div className="error-container">
                 {error && <p className="error">{error}</p>}
                 {successMessage && <p className="success">{successMessage}</p>}
             </div>
 
-           
             <form onSubmit={handleSubmit}>
+                <div className="row">
+                    <label>Student ID:</label>
+                    <input type="text" name="student_id" value={formData.student_id} onChange={handleChange} placeholder="Enter student ID" />
+                </div>
                 <div className="row">
                     <label>Name:</label>
                     <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter student name" />
@@ -96,11 +100,11 @@ function StudentRegistration() {
                     <input type="text" name="zipcode" value={formData.zipcode} onChange={handleChange} placeholder="Enter zipcode" />
                 </div>
                 <div id="button" className="row">
-                    <button type="submit">Register</button>
+                    <button type="submit">Update</button>
                 </div>
             </form>
         </div>
     );
 }
 
-export default StudentRegistration;
+export default UpdateStudent;
