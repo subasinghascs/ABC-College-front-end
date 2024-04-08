@@ -30,20 +30,20 @@ const StudentViewPage = () => {
 
       <div style={{ maxWidth: '800px', margin: 'auto', marginTop: '25px' }}>
         <h1>All Students</h1>
-        <table className="table">
+        <table className="table" style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
+              <th style={{ padding: '10px', border: '1px solid #ddd' }}>ID</th>
+              <th style={{ padding: '10px', border: '1px solid #ddd' }}>Name</th>
+              <th style={{ padding: '10px', border: '1px solid #ddd' }}>Email</th>
             </tr>
           </thead>
           <tbody>
             {students.map((student) => (
               <tr key={student.id}>
-                <td>{student.id}</td>
-                <td>{student.name}</td>
-                <td>{student.email}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{student.id}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{student.name}</td>
+                <td style={{ padding: '10px', border: '1px solid #ddd' }}>{student.email}</td>
               </tr>
             ))}
           </tbody>
