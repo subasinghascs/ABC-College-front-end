@@ -1,75 +1,31 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# ABC College Student Management System - React App
+![Screenshot (1651)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/ed15500b-9a6f-4a6f-8063-8301fabc3f06)
+![Screenshot (1650)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/d4596e9a-a3ad-4117-bf40-fb08a54ae486)
+![Screenshot (1653)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/14569931-9499-4401-9905-ef8f262e5c56)
+![Screenshot (1652)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/4a0031da-3251-4dc5-904e-d88ac57520f0)
+![Screenshot (1654)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/79124bf4-b2e9-4ffb-aef1-ec75f1035f8f)
+![Screenshot (1660)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/55d0e2ea-2847-4d27-a957-39cacf5420ad)
+![Screenshot (1657) - Copy](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/e7966d0c-9287-4925-8356-8c8db3d9c539)
+![Screenshot (1658)](https://github.com/subasinghascs/ABC-College-front-end/assets/92568598/3f7c8a85-1429-4c20-bd78-59b2f0f2204e)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is a simple student management system web application built using React. It allows users to view a list of students, add new students, update existing student details, and delete students.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- View all students with their ID, name, and email.
+- Add a new student by providing name, email, street, city, state, and zipcode.
+- Update existing student details including name, email, street, city, state, and zipcode.
+- Delete a student from the system.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# ABC-College-front-end
-ABC College front-end react app
->>>>>>> 488e9c4b55e99f1f23a6a02831414d21983c5cd7
+   ```bash
+   git clone https://github.com/subasinghascs/ABC-College-front-end.git
